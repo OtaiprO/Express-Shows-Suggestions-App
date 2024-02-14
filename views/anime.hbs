@@ -1,0 +1,46 @@
+<main class="container">
+  <h2>Anime details</h2>
+  <div class="forms">
+    {{#if anime}}
+      <h2 class="name">{{anime.name}}</h2>
+      <div class="details-container">
+        <div class="details-cotainer-half">
+          <div class="details">
+            <p>IMDb rating {{anime.rating}}/10</p>
+            <p>Released in {{anime.released}}</p>
+            <p>My recommendation {{anime.recommendation}}/10</p>
+          </div>
+          <div class="story">
+            <h4 class="white">summarized story</h4>
+            <p class="">{{anime.story}}</p>
+          </div>
+
+        </div>
+        {{#if anime.picture}}
+
+          <div class="suggestion-img">
+            <img src="{{anime.picture}}" alt="{{anime.name}}" />
+          </div>
+        {{/if}}
+
+      </div>
+      {{#if isLoggedIn}}
+        <div class="two-buttons">
+          <a href="/animes/update-anime/{{anime.id}}"><button
+              class="btn btn-success"
+            >Update</button></a>
+
+          <form
+            method="POST"
+            action="/animes/delete-anime/{{anime.id}}"
+            class="form-margin-bottom"
+          >
+            <input type="submit" value="Delete" class="btn btn-danger" />
+          </form>
+        </div>
+      {{/if}}
+    {{else}}
+      <p>Sorry can't find the information you are looking for.</p>
+    {{/if}}
+  </div>
+</main>

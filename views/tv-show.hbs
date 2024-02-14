@@ -1,0 +1,46 @@
+<main class="container">
+  <h2>TV-Show details</h2>
+  <div class="forms">
+    {{#if tvShow}}
+      <h2 class="name">{{tvShow.name}}</h2>
+      <div class="details-container">
+        <div class="details-cotainer-half">
+          <div class="details">
+            <p>IMDb rating {{tvShow.rating}}/10</p>
+            <p>Released in {{tvShow.released}}</p>
+            <p>My recommendation {{tvShow.recommendation}}/10</p>
+          </div>
+          <div class="story">
+            <h4 class="white">summarized story</h4>
+            <p class="">{{tvShow.story}}</p>
+          </div>
+
+        </div>
+        {{#if tvShow.picture}}
+
+          <div class="suggestion-img">
+            <img src="{{tvShow.picture}}" alt="{{tvShow.name}}" />
+          </div>
+        {{/if}}
+
+      </div>
+      {{#if isLoggedIn}}
+        <div class="two-buttons">
+          <a href="/tv-shows/update-tv-show/{{tvShow.id}}"><button
+              class="btn btn-success"
+            >Update</button></a>
+
+          <form
+            method="POST"
+            action="/tv-shows/delete-tv-show/{{tvShow.id}}"
+            class="form-margin-bottom"
+          >
+            <input type="submit" value="Delete" class="btn btn-danger" />
+          </form>
+        </div>
+      {{/if}}
+    {{else}}
+      <p>Sorry can't find the information you are looking for.</p>
+    {{/if}}
+  </div>
+</main>

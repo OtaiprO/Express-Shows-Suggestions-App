@@ -1,0 +1,161 @@
+body {
+  background-color: #d0efff;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+main {
+  margin-bottom: 10px;
+}
+.main-center {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  align-items: center;
+}
+.main-normal {
+  margin-top: 10px;
+}
+
+footer {
+  background-color: #d0efff;
+  justify-self: baseline;
+}
+p {
+  color: white;
+}
+.p-dark {
+  color: black;
+}
+ul {
+  list-style-type: none;
+}
+
+.ul-padding-left-reset {
+  padding-left: 0px;
+}
+
+.showBox {
+  background-color: #2a9df4;
+}
+
+.header-margin-top {
+  margin-top: 20px;
+}
+.form-margin-bottom {
+  margin-bottom: 0;
+}
+
+.margin-sides {
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-bottom: 3px;
+  margin-top: 3px;
+}
+
+.container-margin-side {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.create-btn-margin {
+  margin-bottom: 10px;
+}
+
+.show-list {
+  padding: 10px;
+  margin-bottom: 18px;
+}
+
+.suggestion-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.suggestion-content-text {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  justify-content: space-evenly;
+}
+
+.suggestion-img {
+  max-width: 184px;
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.forms {
+  padding: 10px;
+  background-color: #2a9df4;
+}
+
+.width-fill {
+  width: 100%;
+}
+
+.white {
+  color: white;
+}
+.validations {
+  background-color: rgb(249, 74, 21);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.details-container {
+  display: flex;
+}
+
+.story {
+  display: flex;
+  flex-direction: column;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.details-cotainer-half {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.two-buttons {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: row;
+  column-gap: 8px;
+}
+
+.lower-margin {
+  margin-bottom: 0px;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+}
+.myInput {
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+}

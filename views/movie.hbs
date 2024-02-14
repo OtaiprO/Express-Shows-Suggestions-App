@@ -1,0 +1,46 @@
+<main class="container">
+  <h2>Movie details</h2>
+  <div class="forms">
+    {{#if movie}}
+      <h2 class="name">{{movie.name}}</h2>
+      <div class="details-container">
+        <div class="details-cotainer-half">
+          <div class="details">
+            <p>IMDb rating {{movie.rating}}/10</p>
+            <p>Released in {{movie.released}}</p>
+            <p>My recommendation {{movie.recommendation}}/10</p>
+          </div>
+          <div class="story">
+            <h4 class="white">summarized story</h4>
+            <p class="">{{movie.story}}</p>
+          </div>
+
+        </div>
+        {{#if movie.picture}}
+
+          <div class="suggestion-img">
+            <img src="{{movie.picture}}" alt="{{movie.name}}" />
+          </div>
+        {{/if}}
+
+      </div>
+      {{#if isLoggedIn}}
+        <div class="two-buttons">
+          <a href="/movies/update-movie/{{movie.id}}"><button
+              class="btn btn-success"
+            >Update</button></a>
+
+          <form
+            method="POST"
+            action="/movies/delete-movie/{{movie.id}}"
+            class="form-margin-bottom"
+          >
+            <input type="submit" value="Delete" class="btn btn-danger" />
+          </form>
+        </div>
+      {{/if}}
+    {{else}}
+      <p>Sorry can't find the information you are looking for.</p>
+    {{/if}}
+  </div>
+</main>

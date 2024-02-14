@@ -1,0 +1,60 @@
+<main class="container-fluid main-center">
+<h2>Add your suggestions!</h2>
+{{!-- <select class="form-select" aria-label="Default select example">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select> --}}
+{{> general-errors errors}}
+<form action="/suggestions/create-suggestion" method="POST"  class="forms">
+ 
+  {{!-- fffffffffffffff --}}
+  <div class="input-group input-group-sm mb-3">
+  <select class="form-select" aria-label="Default select example" name="type" >
+  <option  value="none" > * Choose type</option>
+  <option value="Movie">Movie</option>
+  <option value="Show">Show</option>
+  <option value="Anime">Anime</option>
+</select>
+</div>
+<div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">* Movie name</span>
+  <input type="text" name="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{name}}">
+</div>
+  
+  <div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">* IMDb Rating</span>
+  <input type="number" name="rating" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{rating}}">
+</div>
+ 
+    <div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">* Release "year"</span>
+  <input type="number" name="released" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{released}}">
+</div>
+ 
+    <div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">* Recommendation</span>
+  <input type="number" name="recommendation" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{recommendation}}">
+</div>
+    
+ 
+  <input type="submit" value="create movie"  class="btn btn-success width-fill"/>
+</form>
+
+</main>
+
+ {{!-- <div>* Type: <input type="text" name="type" value="{{type}}" /></div>
+  <div>* Name: <input class = "" type="text" name="name" value="{{name}}" /></div>
+  <div>* Rating: <input type="number" name="rating" value="{{rating}}" /></div>
+  <div>* Released:
+    <input type="number" name="released" value="{{released}}" /></div>
+  <div>- Picture URL:
+    <input type="text" name="picture" value="{{picture}}" /></div>
+  <div>- Recommendation:
+    <input
+      type="number"
+      name="recommendation"
+      value="{{recommendation}}"
+    /></div>
+  <input type="submit" value="create suggestion" /> --}}

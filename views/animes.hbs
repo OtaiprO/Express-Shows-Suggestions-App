@@ -1,0 +1,54 @@
+<main class="container-fluid main-center">
+
+  <h2>Animes list</h2>
+  {{#if isLoggedIn}}
+    <a href="/animes/create-anime"><button
+        class="btn btn-success create-btn-margin"
+      >Add an anime</button>
+    </a>
+  {{/if}}
+  <form action="/animes/search" method="GET" class="search-form">
+    <input
+      type="search"
+      class="myInput"
+      placeholder="Search for names here"
+      name="searchName"
+    />
+    <input type="submit" class="btn btn-secondary" value="Search" />
+  </form>
+  {{#if dbError}}
+    <p>There is an error try again later.</p>
+  {{else}}
+    {{#if animes.length}}
+      <ul class="ul-padding-left-reset">
+        {{#each animes}}
+          <div class="showBox">
+            <li class="show-list">
+              <h2 class="name">{{name}}</h2>
+              <div class="suggestion-content">
+                <div class="suggestion-content-text">
+                  <p>IMDb rating {{rating}}/10</p>
+                  <p>Released in {{released}}</p>
+                  <p>My recommendation {{recommendation}}/10</p>
+
+                  <a href="/animes/anime/{{id}}"><button
+                      class="btn btn-warning"
+                    >See more details</button>
+                  </a>
+                </div>
+                {{#if picture}}
+                  <div class="suggestion-img">
+                    <img src="{{picture}}" alt="{{name}}" />
+                  </div>
+                {{/if}}
+              </div>
+            </li>
+          </div>
+        {{/each}}
+      </ul>
+    {{else}}
+      <p class="p-dark">There are no recommended animes yet.</p>
+    {{/if}}
+
+  {{/if}}
+</main>

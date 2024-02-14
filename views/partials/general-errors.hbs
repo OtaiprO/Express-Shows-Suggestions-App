@@ -1,0 +1,11 @@
+{{#if this.length}}
+  <div class="validations">
+    <H5 class="errors">The application did not work because of some mistakes in
+      your application, try these solutions:</H5>
+    <ul>
+      {{#each this}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+  </div>
+{{/if}}

@@ -1,0 +1,36 @@
+<main class="container-fluid main-center">
+
+<h2>Your suggestions!</h2>
+<a href="/suggestions/create-suggestion"><button class="btn btn-success create-btn-margin">Add a suggestion</button></a>
+
+{{#if dbError}}
+  <p>There is an error try again later.</p>
+{{else}}
+  {{#if suggestions.length}}
+    <ul class="ul-padding-left-reset">
+      {{#each suggestions}}
+        <div class="showBox">
+          <li class="show-list">
+            <h2>{{type}}: {{name}}</h2>
+            <p>IMDb rating {{rating}}/10</p>
+            <p>Released in {{released}}</p>
+            <p>My recommendation {{recommendation}}/10</p>
+            {{#if ../isLoggedIn}}
+              <form
+                method="POST"
+                action="/suggestions/delete-suggestion/{{id}}" 
+                class="form-margin-bottom"
+              >
+                <input type="submit" value="Delete" class="btn btn-danger"/>
+              </form>
+            {{/if}}
+          </li>
+        </div>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p class="p-dark">There are no recommended suggestions yet.</p>
+  {{/if}}
+
+{{/if}}
+</main>

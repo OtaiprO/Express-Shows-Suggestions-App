@@ -1,0 +1,41 @@
+<main class="container-fluid main-center">
+<h2>Add an anime!</h2>
+
+{{> general-errors errors}}
+{{#if isLoggedIn}}
+<form action="/animes/create-anime" method="POST" class="forms">
+<div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">* Anime name</span>
+  <input type="text" name="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{name}}">
+</div>
+  <div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">* Story</span>
+  <textarea type="text" name="story" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" >{{story}}</textarea>
+</div>
+  
+  <div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">* IMDb Rating</span>
+  <input type="number" name="rating" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{rating}}">
+</div>
+ 
+    <div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">* Release "year"</span>
+  <input type="number" name="released" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{released}}">
+</div>
+ 
+    <div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">* Recommendation</span>
+  <input type="number" name="recommendation" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{recommendation}}">
+</div>
+    <div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">- Picture URL</span>
+  <input type="text" name="picture" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{picture}}">
+</div>
+   <input type="hidden" name="status" value="seen" />
+ 
+  <input type="submit" value="create anime"  class="btn btn-success width-fill"/>
+</form>
+{{else}}
+<p>You need to be logged in to add animes.</p>
+{{/if}}
+</main>
